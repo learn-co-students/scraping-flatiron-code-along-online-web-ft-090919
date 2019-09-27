@@ -24,7 +24,7 @@ class Scraper
   end
   
   def get_courses
-    @@courses = @@doc.css("h1")
+    @@courses = @@doc.css(".post")
   end
   
   def make_courses

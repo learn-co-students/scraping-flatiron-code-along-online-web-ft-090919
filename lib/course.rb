@@ -16,20 +16,5 @@ class Course
     @@all.clear
   end
   
-  def get_page
-    html = open("http://learn-co-curriculum.github.io/site-for-scraping/courses")
-    @@doc = Nokogiri::HTML(html)
-  end
-  
-  def get_courses
-    @@courses = @@doc = doc.css("h2")
-  end
-  
-  def make_courses
-    @@courses.each do |course|
-      Course.new(course)
-    end
-  end
-  
 end
 

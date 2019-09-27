@@ -29,6 +29,18 @@ describe "Scraper" do
     end
   end
 
-  
+  describe "#make_courses" do
+    it "iterates over the courses array returned by #get_courses and creates a new Course instance out of each array element." do
+      Course.reset_all
+      courses = scraper.make_courses
+      expect(Course.all.class).to be(Array)
+      expect(Course.all.empty?).not_to be(true)
+      Course.all.each do |course|
+        expect(course.title).to be_a String
+        expect(course.schedule).to be_a String
+        expect(course.description).to be_a String
+      end
+    end
+  end
 
 end
