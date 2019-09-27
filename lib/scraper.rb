@@ -1,3 +1,5 @@
+require 'pry'
+
 require 'nokogiri'
 require 'open-uri'
 
@@ -14,6 +16,26 @@ class Scraper
         puts "  Description: #{course.description}"
       end
     end
+  end
+  
+  def get_page
+    html = open("http://learn-co-curriculum.github.io/site-for-scraping/courses")
+    @@doc = Nokogiri::HTML(html)
+  end
+  
+  def get_courses
+    @@courses = @@doc.css("h1")
+  end
+  
+  def make_courses
+    course_text = []
+    @@courses.each do |course|
+      course_text << course.text.strip
+    end
+    course_text.each do |course|
+      course = Course.new
+    end
+    
   end
   
 end
