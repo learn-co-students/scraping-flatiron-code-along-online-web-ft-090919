@@ -35,7 +35,7 @@ class Scraper
     course_text.each do |course|
       course = Course.new
     end
-    binding.pry
+    
   end
   
 end
