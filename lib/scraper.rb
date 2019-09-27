@@ -28,14 +28,12 @@ class Scraper
   end
   
   def make_courses
-    course_text = []
-    @@courses.each do |course|
-      course_text << course.text.strip
-    end
-    course_text.each do |course|
+    @@courses.each do |post|
       course = Course.new
+      course.title = post.css("h2").text
+      course.schedule = post.css(".date").text
+      course.description = post.css("p").text
     end
-    
   end
   
 end
