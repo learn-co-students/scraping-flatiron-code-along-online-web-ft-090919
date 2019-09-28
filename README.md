@@ -239,7 +239,6 @@ doc.css(".post")
 You should see something like this:
 
 ![doc.css output](http://readme-pics.s3.amazonaws.com/Screen%20Shot%202015-08-20%20at%204.44.13%20PM.png)
-
 Whoa! That's a lot of XML. But, if you take a closer look at the content, you'll
 see that these Nokogiri XML elements do describe the individual courses. You'll
 notice course titles and descriptions, among other pieces of information.
